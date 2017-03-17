@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Sovellus](https://www.cs.helsinki.fi)
+* [Sovellus](http://langjimi.users.cs.helsinki.fi/tsoha/)
 * [Dokumentaatio](doc/dokumentaatio.pdf)
 
 ## Aihe
