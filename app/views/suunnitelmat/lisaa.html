@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Lisää Tehtävä</h1>
+
+  <form>
+    <div class="form-group">
+      <label>Tehtävä</label>
+      <input class="form-control" value="Osta maitoa" type="text">
+    </div>
+    <div class="form-group">
+      <label>Luokka</label>
+      <input class="form-control" value="Ostokset" type="text">
+    </div>
+    <div class="form-group">
+      <label>Tärkeysaste</label>
+      <input class="form-control" value="7" type="text">
+    </div>
+    <div class="form-group">
+      <label>Lisätietoa</label>
+      <textarea class="form-control"> Maito loppu
+      </textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Lisää</button>
+    </div>
+  </form>
+{% endblock %}

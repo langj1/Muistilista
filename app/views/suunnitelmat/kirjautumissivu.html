@@ -1,0 +1,33 @@
+.center{
+	position:absolute;
+	width:780px;
+	height:650px;
+	left:50%;
+	top:50%;
+	margin-left:-390px;
+	margin-top:-325px;
+}
+
+{% extends "base.html" %}
+{% block content %}
+
+	
+	<div class="center">
+		<h1>Kirjaudu sisään</h1>
+		<form>
+			<div>
+				<label>Käyttäjätunnus</label>
+				<input type="text" name="tunnus">	
+			</div>
+			<div>
+				<label>Salasana</label>
+				<input type="password" name="salasana">
+			</div>
+
+		  	<button class="btn btn-primary">Kirjaudu</button>
+		</form>
+	</div>
+	
+
+
+{% endblock %}

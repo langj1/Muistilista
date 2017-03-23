@@ -12,4 +12,16 @@
       // Testaa koodiasi täällä
       View::make('helloworld.html');
     }
+
+    public static function login(){
+      View::make('suunnitelmat/kirjautumissivu.html');
+    }
+
+    public static function muistilista(){
+      View::make('suunnitelmat/muistilista.html');
+    }
+
+    public static function lisaa(){
+      View::make('suunnitelmat/lisaa.html');
+    }
   }
