@@ -13,7 +13,7 @@
   });
 
   $routes->get('/muistilista', function() {
-    HelloWorldController::mistilista();
+    HelloWorldController::muistilista();
   });
 
   $routes->get('/lisaa', function() {
