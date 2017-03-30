@@ -1,5 +1,6 @@
 <?php
 
+  require 'app/models/tehtava.php';
   class HelloWorldController extends BaseController{
 
     public static function index(){
@@ -10,6 +11,13 @@
 
     public static function sandbox(){
       // Testaa koodiasi täällä
+
+      $tehtavat = Tehtava::all();
+      $tehtava = Tehtava::find(1);
+
+      Kint::dump($tehtavat);
+      Kint::dump($tehtava);
+
       View::make('helloworld.html');
     }
 
