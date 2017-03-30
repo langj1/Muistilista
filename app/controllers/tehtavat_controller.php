@@ -22,7 +22,7 @@ class TehtavaController extends BaseController{
 			));
 		$tehtava->save();
 
-		Redirect::to('/muistilista' . $tehtava->, array('message' => 'Tehtävä lisätty muistlistaan!'));
+		Redirect::to('/muistilista' . $tehtava->id, array('message' => 'Tehtävä lisätty muistlistaan!'));
 		
 	}
 }
