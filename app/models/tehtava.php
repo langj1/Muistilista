@@ -13,7 +13,7 @@
    		$query = DB::connection()->prepare('SELECT * FROM Tehtava');
    		$query->execute();
 
-   		$rows = $query->fetch_all()
+   		$rows = $query->fetch_all();
 
    		$tehtavat = array();
 
