@@ -13,13 +13,15 @@
       </tr>
     </thead>
     <tbody>
+    {% for tehtava in tehtavat %}
       <tr>
-        <td>Osta maitoa</td>
-        <td>Ostokset</td>
-        <td>7</td>
-        <td>Maito loppu</td>
+        <td>{{tehtava.nimi}}</td>
+        <td>{{tehtava.luokka}}</td>
+        <td>{{tehtava.tarkeys}}</td>
+        <td>{{tehtava.lisatieto}}</td>
         <td><button class="btn btn-danger">Poista</button></td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 {% endblock %}

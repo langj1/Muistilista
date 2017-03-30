@@ -1,6 +1,6 @@
 <?php
 
-  require 'app/models/tehtava.php';
+  //require 'app/models/tehtava.php';
   class HelloWorldController extends BaseController{
 
     public static function index(){
@@ -18,7 +18,7 @@
       Kint::dump($tehtavat);
       Kint::dump($tehtava);
 
-      View::make('helloworld.html');
+      //View::make('helloworld.html');
     }
 
     public static function login(){
