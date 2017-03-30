@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Oma Muistilista</h1>
+  <button class="btn btn-success">Lisää tehtävä</button>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Tehtävä</th>
+        <th>Luokka</th>
+        <th>Tärkeysaste</th>
+        <th>Lisätietoa</th>
+        <th>Poista</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tee läksyt</td>
+        <td>Koulutehtävät</td>
+        <td>3</td>
+        <td>Matikan tehtävät 3,4 ja 5</td>
+        <td><button class="btn btn-danger">Poista</button></td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

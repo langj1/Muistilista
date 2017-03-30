@@ -13,9 +13,17 @@
   });
 
   $routes->get('/muistilista', function() {
-    TehtavaController::muistilista();
+    HelloWorldController::muistilista();
   });
 
   $routes->get('/lisaa', function() {
     HelloWorldController::lisaa();
+  });
+
+  $routes->post('/muistilista', function() {
+    TehtavaController::store();
+  });
+
+  $routes->get('/muistilista/uusi', function() {
+    TehtavaController::create();
   });

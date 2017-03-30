@@ -51,4 +51,15 @@
 
    		return null;
    	}
+
+    public function save(){
+
+      $query = DB::connection()->prepare(INSERT INTO Tehtava(kayttaja, nimi, luokka, tarkeys, lisatieto) VALUES(:kayttaja, :nimi, :luokka, :tarkeys, :lisatieto) RETURNING id);
+
+      $query->execute(array('kayttaja' => $this->kayttaja, 'nimi' => $this->nimi, 'luokka' => $this->luokka, 'tarkeys' => $this->tarkeys, 'lisatieto => $this->lisatieto'));
+
+      $row = $query->fetch();
+
+      $this->id = $row['id'];
+    }
   }
