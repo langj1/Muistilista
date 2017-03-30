@@ -12,12 +12,12 @@
     HelloWorldController::login();
   });
 
-  $routes->get('/muistilista', function() {
-    HelloWorldController::muistilista();
-  });
-
   $routes->get('/lisaa', function() {
     HelloWorldController::lisaa();
+  });
+
+  $routes->get('/muistilista', function() {
+    TehtavaController::muistilista();
   });
 
   $routes->post('/muistilista', function() {
@@ -25,5 +25,5 @@
   });
 
   $routes->get('/muistilista/uusi', function() {
-    TehtavaController::create();
+    TehtavaController::uusi();
   });
