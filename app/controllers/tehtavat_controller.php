@@ -2,6 +2,23 @@
 
 class TehtavaController extends BaseController{
 
+	public static function tarkeysaste($tarkeys){
+
+		if($tarkeys == 'option1'){
+			$tarkeys = 1;
+		} else if($tarkeys == 'option2'){
+			$tarkeys = 2;
+		} else if($tarkeys == 'option3'){
+			$tarkeys = 3;
+		} else if($tarkeys == 'option4'){
+			$tarkeys = 4;
+		} else if($tarkeys == 'option5'){
+			$tarkeys = 5;
+		} 
+
+		return $tarkeys;
+	}
+
 	public static function muistilista(){
 
 		$tehtavat = Tehtava::all();
@@ -65,20 +82,4 @@ class TehtavaController extends BaseController{
 		Redirect::to('/muistilista', array('message' => 'Poisto onnistunut!'));
 	}
 
-	public static function tarkeysaste($tarkeys){
-
-		if($tarkeys == 'option1'){
-			$tarkeys = 1;
-		} else if($tarkeys == 'option2'){
-			$tarkeys = 2;
-		} else if($tarkeys == 'option3'){
-			$tarkeys = 3;
-		} else if($tarkeys == 'option4'){
-			$tarkeys = 4;
-		} else if($tarkeys == 'option5'){
-			$tarkeys = 5;
-		} 
-
-		return $tarkeys;
-	}
 }
