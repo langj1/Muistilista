@@ -12,6 +12,7 @@
         <th>Tärkeysaste</th>
         <th>Lisätietoa</th>
         <th>Poista</th>
+        <th>Muokkaa</th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
         <td>{{tehtava.tarkeys}}</td>
         <td>{{tehtava.lisatieto}}</td>
         <td><form method="post" action="{{base_path}}/muistilista/{{tehtava.id}}/poista" style="display: inline-block;" <button type="submit" class="btn btn-danger">Poista</button></form></td>
+        <td><a class="btn btn-default btn-sm" href="{{base_path}}/muistilista/{{tehtava.id}}/muokkaa">Muokkaa</a></td>
       </tr>
       {% endfor %}
     </tbody>
