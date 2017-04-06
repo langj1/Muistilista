@@ -15,7 +15,7 @@ class TehtavaController extends BaseController{
 
 		$tehtava = new Tehtava(array(
 			'nimi' => $params['nimi'],
-			'tarkeys' => $this->tarkeysaste($params['tarkeys']),
+			'tarkeys' => tarkeysaste($params['tarkeys']),
 			'lisatieto' => $params['lisatieto'],
 			'kayttaja' => 'Jonne'
 			));
@@ -40,7 +40,7 @@ class TehtavaController extends BaseController{
 		$attributes = array(
 			'id' => $id,
 			'nimi' => $params['nimi'],
-			'tarkeys' => $this->tarkeysaste($params['tarkeys']),
+			'tarkeys' => tarkeysaste($params['tarkeys']),
 			'lisatieto' => $params['lisatieto'],
 			'kayttaja' => 'Jonne'
 		);
