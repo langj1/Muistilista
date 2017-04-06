@@ -2,7 +2,7 @@
   {% block content %}
     <h1>Lisää Tehtävä</h1>
 
-    <form>
+    <form method="post" action="{{base_path}}/muistilista">
       <div class="form-group">
         <label>Tehtävä</label>
         <input name="nimi" class="form-control" value="Osta maitoa" type="text">
