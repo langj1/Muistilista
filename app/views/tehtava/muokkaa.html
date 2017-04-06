@@ -5,7 +5,7 @@
     <form method ="post" action="{{base_path}}/muistilista/:id/muokkaa">
       <div class="form-group">
         <label>Tehtävä</label>
-        <input name="nimi" class="form-control" type="text" value=tehtava.nimi>
+        <input name="nimi" class="form-control" type="text" value={{tehtava.nimi}}>
       </div>
       <div class="form-group">
         <label>Luokka</label>
@@ -14,24 +14,24 @@
       <div class="form-group"> 
       <label>Tärkeysaste</label>
       <label class="radio-inline">
-          <input type="radio" name="tarkeys" id="inlineRadio1" value="option1"> 1
+          <input type="radio" name="tarkeys" id="inlineRadio1" value="1"> 1
       </label>
       <label class="radio-inline">
-        <input type="radio" name="tarkeys" id="inlineRadio2" value="option2"> 2
+        <input type="radio" name="tarkeys" id="inlineRadio2" value="2"> 2
       </label>
       <label class="radio-inline">
-        <input type="radio" name="tarkeys" id="inlineRadio3" value="option3"> 3
+        <input type="radio" name="tarkeys" id="inlineRadio3" value="3"> 3
       </label>
       <label class="radio-inline">
-        <input type="radio" name="tarkeys" id="inlineRadio4" value="option4"> 4
+        <input type="radio" name="tarkeys" id="inlineRadio4" value="4"> 4
       </label>
       <label class="radio-inline">
-        <input type="radio" name="tarkeys" id="inlineRadio5" value="option5"> 5
+        <input type="radio" name="tarkeys" id="inlineRadio5" value="5"> 5
       </label>
       </div>
       <div class="form-group">
         <label>Lisätietoa</label>
-        <textarea name="lisatieto" class="form-control" value=tehtava.lisatieto> 
+        <textarea name="lisatieto" class="form-control" value={{tehtava.lisatieto}}> 
         </textarea>
       </div>
       <div class="form-group">
