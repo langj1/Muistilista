@@ -72,7 +72,7 @@
 
     public function validate_nimi(){
       $validate = 'validate_not_empty';
-      $this->{$validate}($nimi);
+      return $this->{$validate}($nimi);
     }
 
     public function poista(){

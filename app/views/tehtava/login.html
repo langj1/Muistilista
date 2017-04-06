@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+	
+		<h1>Kirjaudu sisään</h1>
+		<form method="post" action="{{base_path}}"> 
+    		<div class="form-group">
+				<label>Käyttäjätunnus</label>
+				<input type="text" name="tunnus">	
+			</div>
+    		<div class="form-group">
+				<label>Salasana</label>
+				<input type="password" name="salasana">
+			</div>
+
+		  	<button class="btn btn-primary">Kirjaudu</button>
+		</form>
+
+	
+
+
+{% endblock %}

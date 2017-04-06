@@ -1,9 +1,5 @@
 <?php
 
-  $routes->get('/', function() {
-    HelloWorldController::index();
-  });
-
   $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
   });
@@ -14,6 +10,14 @@
 
   $routes->get('/lisaa', function() {
     HelloWorldController::lisaa();
+  });
+  
+  $routes->get('/', function() {
+    UserController::login();
+  });
+
+  $routes->post('/', function() {
+    UserController::handle_login();
   });
 
   $routes->get('/muistilista', function() {
