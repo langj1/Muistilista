@@ -6,6 +6,7 @@
 
   	public function __construct($attributes){
    		parent::__construct($attributes);
+      $this->validators = array('validate_nimi');
    	}
 
    	public static function all(){
@@ -62,4 +63,23 @@
 
       $this->id = $row['id'];
     }
+
+    public function update(){
+      $query = DB::connection()->prepare('UPDATE Tehtava SET (nimi, tarkeys, lisatieto) = (:nimi, :tarkeys, :lisatieto');
+
+      $query->execute(array('nimi' => $this->nimi, 'tarkeys' => $this->tarkeys, 'lisatieto' => $this->lisatieto));
+    }
+
+    public function validate_nimi(){
+      $validate = 'validate_not_empty';
+      $this->{$validate}($nimi);
+    }
+
+    public function poista(){
+      $query = DB::connection()->prepare('DELETE FROM Tehtava WHERE id=:id');
+
+      $query->execute(array('id' => $this->id));
+    }
+    
+   
   }

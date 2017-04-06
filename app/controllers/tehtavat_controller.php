@@ -13,7 +13,59 @@ class TehtavaController extends BaseController{
 
 		$params = $_POST;
 
-		$tarkeys = $params['tarkeys'];
+		$tehtava = new Tehtava(array(
+			'nimi' => $params['nimi'],
+			'tarkeys' => $this->tarkeysaste($params['tarkeys']),
+			'lisatieto' => $params['lisatieto'],
+			'kayttaja' => 'Jonne'
+			));
+		$tehtava->save();
+
+		Redirect::to('/muistilista');
+		
+	}
+
+	public static function uusi(){
+		View::make('tehtava/uusi.html');
+	}
+
+	public static function muokkaa($id){
+		$tehtava = Tehtava::find($id);
+		View::make('tehtava/muokkaa.html', array('attributes' => $tehtava));
+	}
+
+	public static function update($id){
+		$params = $_POST;
+
+		$attributes = array(
+			'id' => $id,
+			'nimi' => $params['nimi'],
+			'tarkeys' => $this->tarkeysaste($params['tarkeys']),
+			'lisatieto' => $params['lisatieto'],
+			'kayttaja' => 'Jonne'
+		);
+
+		$tehtava = new Tehtava($attributes);
+		$errors = $tehtava->errors();
+
+		if(count($errors) > 0){
+			View::make('tehtava/muokka.html', array('errors' => $errors, 'attributes' => $attributes));
+		}else{
+			$tehtava->update();
+
+			Redirect::to('/muistilista', array('message' => 'Muokkaus onnistunut!'));
+		}
+	}
+
+	public static function poista($id){
+		$tehtava = new Tehtava(array('id' => $id));
+
+		$tehtava->poista();
+
+		Redirect::to('/muistilista', array('message' => 'Poisto onnistunut!'));
+	}
+
+	public static function tarkeysaste($tarkeys){
 
 		if($tarkeys == 'option1'){
 			$tarkeys = 1;
@@ -27,20 +79,6 @@ class TehtavaController extends BaseController{
 			$tarkeys = 5;
 		} 
 
-		$tehtava = new Tehtava(array(
-			'nimi' => $params['nimi'],
-			'luokka' => $params['luokka'],
-			'tarkeys' => $tarkeys,
-			'lisatieto' => $params['lisatieto'],
-			'kayttaja' => 'Jonne'
-			));
-		$tehtava->save();
-
-		Redirect::to('/muistilista');
-		
-	}
-
-	public static function uusi(){
-		View::make('tehtava/uusi.html');
+		return $tarkeys;
 	}
 }

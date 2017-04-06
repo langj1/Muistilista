@@ -27,3 +27,17 @@
   $routes->get('/muistilista/uusi', function() {
     TehtavaController::uusi();
   });
+
+  $routes->get('/muistilista/:id/muokkaa', function($id) {
+    TehtavaController::muokkaa($id);
+  });
+
+  $routes->post('/muistilista/:id/muokkaa', function($id) {
+    TehtavaController::update($id);
+  });
+
+  $routes->post('/muistilista/:id/poista', function($id) {
+    TehtavaController::poista($id);
+  });
+
+

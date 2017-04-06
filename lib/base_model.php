@@ -26,4 +26,15 @@
       return $errors;
     }
 
+    public function validate_not_empty($nimi){
+
+      $errors = array();
+
+      if($nimi == '' || $nimi == null){
+        $errors[] = 'Tehtävän nimi ei saa olla tyhjä!';
+      }
+
+      return $errors;
+    }
+
   }
