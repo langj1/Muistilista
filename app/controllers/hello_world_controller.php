@@ -12,11 +12,16 @@
     public static function sandbox(){
       // Testaa koodiasi täällä
 
-      $tehtavat = Tehtava::all();
-      $tehtava = Tehtava::find(1);
+      $lenkki = new Tehtava(array(
+        'nimi' => '',
+        'tarkeys' => 1,
+        'kayttaja' => 'Jonne',
+        'lisatieto' => 'pitkä lenkki'
+      ));
 
-      Kint::dump($tehtavat);
-      Kint::dump($tehtava);
+      $errors = $lenkki->errors();
+
+      Kint::dump($errors);
 
       //View::make('helloworld.html');
     }
