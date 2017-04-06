@@ -54,7 +54,7 @@
 
     public function save(){
 
-      $query = DB::connection()->prepare('INSERT INTO Tehtava(kayttaja, nimi, luokka, tarkeys, lisatieto) VALUES(:kayttaja, :nimi, :luokka, :tarkeys, :lisatieto) RETURNING id');
+      $query = DB::connection()->prepare('INSERT INTO Tehtava(kayttaja, nimi, tarkeys, lisatieto) VALUES(:kayttaja, :nimi, :tarkeys, :lisatieto) RETURNING id');
 
       $query->execute(array('kayttaja' => $this->kayttaja, 'nimi' => $this->nimi, 'tarkeys' => $this->tarkeys, 'lisatieto' => $this->lisatieto));
 
