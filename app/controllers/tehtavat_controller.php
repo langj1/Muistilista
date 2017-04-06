@@ -30,9 +30,11 @@ class TehtavaController extends BaseController{
 
 		$params = $_POST;
 
+		$t = 'tarkeysaste';
+
 		$tehtava = new Tehtava(array(
 			'nimi' => $params['nimi'],
-			'tarkeys' => $this->{tarkeysaste}($params['tarkeys']),
+			'tarkeys' => $this->{$t}($params['tarkeys']),
 			'lisatieto' => $params['lisatieto'],
 			'kayttaja' => 'Jonne'
 			));
@@ -53,11 +55,11 @@ class TehtavaController extends BaseController{
 
 	public static function update($id){
 		$params = $_POST;
-
+		$t = 'tarkeysaste';
 		$attributes = array(
 			'id' => $id,
 			'nimi' => $params['nimi'],
-			'tarkeys' => $this->{tarkeysaste}($params['tarkeys']),
+			'tarkeys' => $this->{$t}($params['tarkeys']),
 			'lisatieto' => $params['lisatieto'],
 			'kayttaja' => 'Jonne'
 		);
