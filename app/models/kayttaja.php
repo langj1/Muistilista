@@ -22,4 +22,21 @@
    			return null;
    		}
    	}
+
+   	public static function find($tunnus){
+   		$query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE tunnus = :tunnus LIMIT 1');
+   		$query -> execute(array('tunnus' => $tunnus));
+   		$row = $query -> fetch();
+
+   		if($row){
+   			$kayttaja = new Kayttaja(array(
+   				'tunnus' => $row['tunnus'],
+   				'salasana' => $row['salasana'],
+   				));
+
+   			return $kayttaja;
+   		}
+
+   		return null;
+   	}
    }
