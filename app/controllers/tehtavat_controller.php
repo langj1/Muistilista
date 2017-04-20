@@ -30,6 +30,9 @@ class TehtavaController extends BaseController{
 	}
 
 	public static function uusi(){
+
+		self::check_logged_in();
+
 		View::make('tehtava/uusi.html');
 	}
 

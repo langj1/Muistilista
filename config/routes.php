@@ -40,7 +40,7 @@
     TehtavaController::update($id);
   });
 
-  $routes->get('/muistilista/:id/poista', function($id) {
+  $routes->post('/muistilista/:id/poista', function($id) {
     TehtavaController::poista($id);
   });
 
