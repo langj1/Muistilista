@@ -1,5 +1,8 @@
 # Muistilista
 
+Tunnus: Jonne
+Salasana: Ennoj
+
 Yleisiä linkkejä:
 
 * [Sovellus](http://langjimi.users.cs.helsinki.fi/tsoha/)
