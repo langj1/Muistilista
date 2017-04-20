@@ -46,5 +46,5 @@
 
   $routes->post('/logout', function(){
     UserController::logout();
-  })
+  });
 
