@@ -15,7 +15,7 @@
 			}else{
 				$_SESSION['kayttaja'] = $kayttaja->tunnus;
 
-				Redirect::to('/muistilista', array('message' => 'Tervetuloa takaisin ' . $user->name . '!'));
+				Redirect::to('/muistilista', array('message' => 'Tervetuloa takaisin ' . $kayttaja->tunnus . '!'));
 			}
 		}
 	}
