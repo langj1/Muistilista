@@ -4,7 +4,7 @@
 
    	public $tunnus, $salasana;
 
-   	public function__construct($attributes){
+   	public function __construct($attributes){
    		parent::__construct($attributes);
    	}
 
