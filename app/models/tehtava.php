@@ -65,7 +65,7 @@
     }
 
     public function update(){
-      $query = DB::connection()->prepare('UPDATE Tehtava SET (nimi, tarkeys, lisatieto) = (:nimi, :tarkeys, :lisatieto');
+      $query = DB::connection()->prepare('UPDATE Tehtava SET (id,nimi, tarkeys, lisatieto) = (:id, :nimi, :tarkeys, :lisatieto)');
 
       $query->execute(array('nimi' => $this->nimi, 'tarkeys' => $this->tarkeys, 'lisatieto' => $this->lisatieto));
     }
