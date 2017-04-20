@@ -10,7 +10,7 @@
 
    	public static function authenticate($tunnus, $salasana){
    		$query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE tunnus = :tunnus AND salasana = :salasana LIMIT 1');
-   		$query->execute(array('name'=>$name,'password'=>$password));
+   		$query->execute(array('tunnus'=>$tunnus,'salsana'=>$salasana));
    		$row = $query->fetch();
    		if($row){
    			$kayttaja = new Kayttaja(array(
