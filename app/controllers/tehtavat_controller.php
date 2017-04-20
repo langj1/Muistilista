@@ -4,6 +4,8 @@ class TehtavaController extends BaseController{
 
 	public static function muistilista(){
 
+		self::check_logged_in();
+
 		$tehtavat = Tehtava::all();
 
 		View::make('tehtava/muistilista.html', array('tehtavat' => $tehtavat));
@@ -32,11 +34,15 @@ class TehtavaController extends BaseController{
 	}
 
 	public static function muokkaa($id){
+
+		self::check_logged_in();
+
 		$tehtava = Tehtava::find($id);
 		View::make('tehtava/muokkaa.html', array('attributes' => $tehtava));
 	}
 
 	public static function update($id){
+
 		$params = $_POST;
 		
 		$tarkeys = $params['tarkeys'];

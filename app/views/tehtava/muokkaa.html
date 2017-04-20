@@ -2,7 +2,7 @@
   {% block content %}
     <h1>Muokkaa</h1>
 
-    <form method ="post" action="{{base_path}}/muistilista">
+    <form method ="post" action="{{base_path}}/muistilista/:id/muokkaa">
       <div class="form-group">
         <label>Tehtävä</label>
         <input name="nimi" class="form-control" type="text" value={{tehtava.nimi}}>

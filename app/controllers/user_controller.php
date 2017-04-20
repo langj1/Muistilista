@@ -18,4 +18,9 @@
 				Redirect::to('/muistilista', array('message' => 'Tervetuloa takaisin ' . $kayttaja->tunnus . '!'));
 			}
 		}
+
+		public static function logout(){
+			$_SESSION['kayttaja'] = null;
+			Redirect::to('/', array('message' => 'Olet kirjautunut ulos!'));
+		}
 	}

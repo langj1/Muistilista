@@ -44,4 +44,7 @@
     TehtavaController::poista($id);
   });
 
+  $routes->post('/logout', function(){
+    UserController::logout();
+  })
 
