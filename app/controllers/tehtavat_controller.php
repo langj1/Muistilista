@@ -43,7 +43,7 @@ class TehtavaController extends BaseController{
 
 		$luokitus = new Luokitus(array(
 			'luokka' => $params['luokka'],
-			'tehtava' => $params['nimi']
+			'tehtava' => $tehtava->id
 			));
 
 		$luokitus->save();
