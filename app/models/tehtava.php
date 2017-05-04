@@ -99,7 +99,7 @@
     }
 
     public static function etsiTehtavat($nimi){
-      $query = DB::connection()->prepare('SELECT * FROM Tehtava, Luokka, Luokitus WHERE Luokka.nimi = luokka AND id = tehtava AND Luokka.nimi = :nimi');
+      /*$query = DB::connection()->prepare('SELECT * FROM Tehtava, Luokka, Luokitus WHERE Luokka.nimi = luokka AND id = tehtava AND Luokka.nimi = :nimi');
       $query -> execute(array('nimi' => $nimi));
       $rows = $query -> fetch();
 
@@ -117,7 +117,32 @@
       }
 
       return $tehtavat;
+      */
 
+      $kaikki = self::all();
+      $tehtavat = array();
+
+      foreach($kaikki as $teht){
+
+        $luokka = self::luokka($teht->id);
+
+        if(strcmp($luokka,$nimi) == 0){
+          $tehtavat[] = $teht;
+        }
+      }
+
+      return $tehtavat;
     }
+
+      public static function luokka($id){
+        $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE id = :id LIMIT 1');
+        $query -> execute(array('id' => $id));
+        $row = $query -> fetch();
+
+       
+
+        return $row['luokka'];
+  
+      }
 
   }
