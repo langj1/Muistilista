@@ -2,6 +2,9 @@
 {% block content %}
 {% if user_logged_in %}
   <h1>Käyttäjän {{user_logged_in.tunnus}} muistilista</h1>
+  <p>
+    <a href="/tsoha/muistilista/uusi" class="btn btn-success">Lisää tehtävä</a>
+  </p>
   <table class="table table-bordered table-striped">
     <thead>
       <tr>

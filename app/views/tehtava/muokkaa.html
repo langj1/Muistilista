@@ -6,11 +6,11 @@
     <form method ="post" action="{{base_path}}/muistilista/{{tehtava.id}}/muokkaa">
       <div class="form-group">
         <label>Tehtävä</label>
-        <input name="nimi" class="form-control" type="text">
+        <input name="nimi" class="form-control" type="text" value="{{tehtava.nimi}}">
       </div>
       <div class="form-group">
         <label>Luokka</label>
-        <input name="luokka" class="form-control" type="text">
+        <input name="luokka" class="form-control" type="text" value="{{tehtava.luokka}}">
       </div>
       <div class="form-group"> 
       <label>Tärkeysaste</label>
@@ -32,7 +32,7 @@
       </div>
       <div class="form-group">
         <label>Lisätietoa</label>
-        <textarea name="lisatieto" class="form-control" value={{tehtava.lisatieto}}> 
+        <textarea name="lisatieto" class="form-control" >{{tehtava.lisatieto}} 
         </textarea>
       </div>
       <div class="form-group">
