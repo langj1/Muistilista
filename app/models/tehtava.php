@@ -120,8 +120,7 @@
           'kayttaja' => $row['kayttaja'],
           'nimi' => $row['nimi'],
           'tarkeys' => $row['tarkeys'],
-          'lisatieto' => $row['lisatieto'],
-          'luokka' => self::etsiLuokat($row['id'])
+          'lisatieto' => $row['lisatieto']
         ));
       }
 

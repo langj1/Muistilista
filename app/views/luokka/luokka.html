@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th>Tehtävä</th>
-        <th><a href="{{base_path}}/luokat">Luokka</a></th>
         <th>Tärkeysaste</th>
         <th>Lisätietoa</th>
         <th>Poista</th>
@@ -18,7 +17,6 @@
     {% for tehtava in tehtavat %}
       <tr>
         <td>{{tehtava.nimi}}</td>
-        <td>{{tehtava.luokka}}</td>
         <td>{{tehtava.tarkeys}}</td>
         <td>{{tehtava.lisatieto}}</td>
         <td><form method="post" action="{{base_path}}/muistilista/{{tehtava.id}}/poista" style="display: inline-block;"><button type="submit" class="btn btn-danger">Poista</button></form></td>

@@ -73,13 +73,14 @@ class TehtavaController extends BaseController{
 		self::check_logged_in();
 
 		$tehtava = Tehtava::find($id);
-		View::make('tehtava/muokkaa.html', array('tehtava' => $tehtava));
+		View::make('tehtava/muokkaa.html', array('attributes' => $tehtava));
 	}
 
 	public static function update($id){
 
 		$params = $_POST;
 		
+
 		$tarkeys = $params['tarkeys'];
 
 
