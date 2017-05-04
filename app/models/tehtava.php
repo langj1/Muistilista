@@ -2,7 +2,7 @@
 
   class Tehtava extends BaseModel{
 
-  	public $id, $kayttaja, $nimi, $tarkeys, $lisatieto;
+  	public $id, $kayttaja, $nimi, $tarkeys, $lisatieto, $luokka;
 
   	public function __construct($attributes){
    		parent::__construct($attributes);
@@ -30,6 +30,7 @@
    				'nimi' => $row['nimi'],
    				'tarkeys' => $row['tarkeys'],
    				'lisatieto' => $row['lisatieto']
+          'luokka' => self::etsiLuokat($row['nimi'])
    			));
    		}
 
@@ -86,7 +87,7 @@
       $query->execute(array('id' => $this->id));
     }
     
-    public static function etsi($nimi){
+    public static function etsiLuokat($nimi){
       $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava LIMIT 1');
       $query -> execute(array('tehtava' => $nimi));
       $row = $query -> fetch();
