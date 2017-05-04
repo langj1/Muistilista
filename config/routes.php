@@ -52,7 +52,7 @@
     LuokkaController::luokat();
   });
 
-  $routes->get('/luokka/:nimi', function($nimi){
+  $routes->get('/luokat/:nimi', function($nimi){
     LuokkaController::luokka($nimi);
   });
 
