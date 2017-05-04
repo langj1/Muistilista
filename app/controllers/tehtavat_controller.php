@@ -21,8 +21,9 @@ class TehtavaController extends BaseController{
 			'nimi' => $params['nimi'],
 			'tarkeys' => $tarkeys,
 			'lisatieto' => $params['lisatieto'],
-			'kayttaja' => 'Jonne'
+			'kayttaja' => self::get_user_logged_in()->tunnus;
 			));
+
 		$tehtava->save();
 
 		Redirect::to('/muistilista');
@@ -41,7 +42,7 @@ class TehtavaController extends BaseController{
 		self::check_logged_in();
 
 		$tehtava = Tehtava::find($id);
-		View::make('tehtava/muokkaa.html', array('attributes' => $tehtava));
+		View::make('tehtava/muokkaa.html', array('tehtava' => $tehtava));
 	}
 
 	public static function update($id){
