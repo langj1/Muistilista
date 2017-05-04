@@ -6,7 +6,7 @@
 
   	public function __construct($attributes){
    		parent::__construct($attributes);
-      $this->validators = array('validate_nimi');
+      $this->validators = array('validate_nimi', 'validate_luokka');
    	}
 
    	public static function all(){
@@ -80,9 +80,23 @@
     }
 
     public function validate_nimi(){
-      $validate = 'validate_not_empty';
-      return $this->{$validate}($this->$nimi);
+      $errors = array();
+      if($this->nimi == '' || $this->nimi == null){
+        $errors[] = 'Nimi ei saa olla tyhjä!';
+      }
+      
+      return $errors;
     }
+
+    public function validate_luokka(){
+      $errors = array();
+      if($this->luokka == '' || $this->luokka == null){
+        $errors[] = 'Luokka ei saa olla tyhjä!';
+      }
+      
+      return $errors;
+    }
+
 
     public function poista(){
       $query = DB::connection()->prepare('DELETE FROM Tehtava WHERE id=:id');

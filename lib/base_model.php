@@ -21,10 +21,11 @@
       $errors = array();
 
       foreach($this->validators as $validator){
-        $this->{$validator}();
+        $validator_errors = $this->{$validator}();
+        $errors = array_merge($errors, $validator_errors);
       }
 
-      $errors = array_merge($errors, $validator_errors);
+      
 
       return $errors;
     }

@@ -26,6 +26,11 @@ class TehtavaController extends BaseController{
 			'kayttaja' => $kayttaja
 			));
 
+		$errors = $tehtava->errors();
+		    if(count($errors) > 0){
+      			View::make('tehtava/muokkaa.html', array('errors'=>$errors));
+    	}
+
 		$tehtava->save();
 
 			$luokanNimi = $params['luokka'];
