@@ -99,7 +99,7 @@
     }
 
     public static function etsiTehtavat($nimi){
-      $query = DB::connection()->prepare('SELECT * FROM Luokitus, Luokka, Tehtava WHERE Luokka.nimi = luokka AND id = tehtava AND Luokka.nimi = :nimi');
+      $query = DB::connection()->prepare('SELECT * FROM Tehtava, Luokka, Luokitus WHERE Luokka.nimi = luokka AND id = tehtava AND Luokka.nimi = :nimi');
       $query -> execute(array('nimi' => $nimi));
       $rows = $query -> fetch();
 
