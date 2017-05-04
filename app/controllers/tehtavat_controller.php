@@ -89,9 +89,17 @@ class TehtavaController extends BaseController{
 		
 		$tehtava = new Tehtava($attributes);
 
-			$tehtava->update();
+		$tehtava->update();
 
-			Redirect::to('/muistilista', array('message' => 'Muokkaus onnistunut!'));
+		$attribuutit = array(
+			'luokka' => $params['luokka'],
+			'tehtava' => $params['id']);
+
+		$luokitus = new Luokitus($attribuutit);
+
+		$luokitus->update();
+
+		Redirect::to('/muistilista', array('message' => 'Muokkaus onnistunut!'));
 		
 		
 	}

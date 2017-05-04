@@ -35,4 +35,10 @@
     	   
     	}
 
+      public function update(){
+        $query = DB::connection()->prepare('UPDATE Luokitus SET (luokka) = (:luokka) WHERE id = :id');
+
+        $query->execute(array('luokka' => $this->luokka, 'id' => $this->tehtava));
+    }
+
 	}
