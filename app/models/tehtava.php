@@ -86,7 +86,7 @@
       $query->execute(array('id' => $this->id));
     }
     
-    public static function find($nimi){
+    public static function etsi($nimi){
       $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava LIMIT 1');
       $query -> execute(array('tehtava' => $nimi));
       $row = $query -> fetch();
