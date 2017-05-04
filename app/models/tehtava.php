@@ -99,6 +99,10 @@
 
 
     public function poista(){
+      $query = DB::connection()->prepare('DELETE FROM Luokitus WHERE tehtava=:id');
+
+      $query->execute(array('id' => $this->id));
+
       $query = DB::connection()->prepare('DELETE FROM Tehtava WHERE id=:id');
 
       $query->execute(array('id' => $this->id));

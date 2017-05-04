@@ -20,7 +20,3 @@ CREATE TABLE Luokitus(
 luokka varchar(50) REFERENCES Luokka(nimi),
 tehtava INTEGER REFERENCES Tehtava(id)
 );
-
-CREATE TABLE Ylaluokka(
-luokka varchar(50) REFERENCES Luokka(nimi)
-);
