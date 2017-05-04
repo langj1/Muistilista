@@ -21,7 +21,7 @@ class TehtavaController extends BaseController{
 			'nimi' => $params['nimi'],
 			'tarkeys' => $tarkeys,
 			'lisatieto' => $params['lisatieto'],
-			'kayttaja' => self::get_user_logged_in()->tunnus;
+			'kayttaja' => self::get_user_logged_in()->tunnus
 			));
 
 		$tehtava->save();
