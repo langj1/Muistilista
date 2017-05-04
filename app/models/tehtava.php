@@ -11,9 +11,12 @@
 
    	public static function all(){
 
-   		$query = DB::connection()->prepare('SELECT * FROM Tehtava');
+      $t = new TehtavaController();
+      $tunnus = $t->get_user_logged_in();
 
-   		$query->execute();
+   		$query = DB::connection()->prepare('SELECT * FROM Tehtava WHERE kayttaja = :kayttaja');
+
+   		$query->execute(array('id' => $tunnus));
 
    		$rows = $query -> fetchAll();
 
