@@ -96,7 +96,7 @@ class TehtavaController extends BaseController{
 			if(empty($haku)){
 
 				$luokka = new Luokka(array(
-				'kayttaja' => $kayttaja,
+				'kayttaja' => self::get_user_logged_in()->tunnus,
 				'nimi' => $luokanNimi
 				));
 
