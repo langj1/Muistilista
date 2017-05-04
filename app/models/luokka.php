@@ -1,6 +1,6 @@
 <?php
 
-	class luokka extends BaseModel{
+	class Luokka extends BaseModel{
 
 		public $kayttaja, $nimi;
 

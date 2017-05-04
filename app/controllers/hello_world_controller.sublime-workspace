@@ -1,0 +1,214 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"l",
+				"label\tTag"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"d",
+				"div\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/langjimi/tsoha/Muistilista/app/models/luokka.php",
+		"/home/langjimi/Projektit/Muistilista/app/controllers/tehtavat_controller.php",
+		"/home/langjimi/Projektit/Muistilista/app/models/luokka.php",
+		"/home/langjimi/Projektit/Muistilista/sql/add_test_data.sql",
+		"/home/langjimi/Projektit/Muistilista/sql/create_tables.sql",
+		"/home/langjimi/Projektit/Muistilista/app/models/tehtava.php",
+		"/home/langjimi/Projektit/Muistilista/app/models/luokitus.php",
+		"/home/langjimi/Projektit/Muistilista/sql/drop_tables.sql",
+		"/home/langjimi/Projektit/Muistilista/app/views/tehtava/muistilista.html",
+		"/home/langjimi/Projektit/Muistilista/app/views/tehtava/muokkaa.html",
+		"/home/langjimi/Projektit/Muistilista/config/routes.php",
+		"/home/langjimi/Projektit/Muistilista/lib/base_controller.php",
+		"/home/langjimi/Projektit/Muistilista/app/models/kayttaja.php",
+		"/home/langjimi/Projektit/Muistilista/app/views/tehtava/uusi.html",
+		"/home/langjimi/Projektit/Muistilista/app/controllers/user_controller.php",
+		"/home/langjimi/Projektit/Muistilista/app/views/base.html",
+		"/home/langjimi/Projektit/Muistilista/lib/base_model.php",
+		"/home/langjimi/Projektit/Muistilista/app/views/tehtava/login.html",
+		"/home/langjimi/Projektit/Muistilista/app/views/suunnitelmat/kirjautumissivu.html",
+		"/home/langjimi/Projektit/Muistilista/app/views/suunnitelmat/lisaa.html",
+		"/home/langjimi/Projektit/Muistilista/app/views/user/login.html",
+		"/home/langjimi/Projektit/Muistilista/app/controllers/hello_world_controller.php",
+		"/home/langjimi/Projektit/Muistilista/app/views/suunnitelmat/muistilista.html",
+		"/home/langjimi/Projektit/Muistilista/composer.json",
+		"/home/langjimi/Projektit/Muistilista/app/controllers/tehtavat-controller.php",
+		"/home/langjimi/Projektit/Muistilista/app/views/home.html",
+		"/home/langjimi/Projektit/Muistilista/app/models/hello_world.php",
+		"/home/langjimi/Projektit/Muistilista/app/views/helloworld.html",
+		"/home/langjimi/Projektit/Muistilista/app/views/suunnitelmat/tehtava.html",
+		"/home/langjimi/Projektit/Muistilista/index.php",
+		"/home/langjimi/Projektit/Muistilista/tsoha.sublime-build"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"end",
+			"();\n",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/tsoha.sublime-build",
+	"project": "hello_world_controller.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 203.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
