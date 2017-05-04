@@ -6,7 +6,6 @@
 
 		public function __construct($attributes){
    			parent::__construct($attributes);
-      		$this->validators = array('validate_nimi');
    		}
 
    		public static function all(){
@@ -35,7 +34,7 @@
 
    		public static function find($nimi){
    			$query = DB::connection()->prepare('SELECT * FROM Luokka WHERE nimi = :nimi LIMIT 1');
-   			$query -> execute(array('id' => $nimi));
+   			$query -> execute(array('nimi' => $nimi));
    			$row = $query -> fetch();
 
    			if($row){

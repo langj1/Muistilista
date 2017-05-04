@@ -13,6 +13,7 @@
 
       $t = new TehtavaController();
       $tunnus = $t->get_user_logged_in();
+      $t->check_logged_in();
 
    		$query = DB::connection()->prepare('SELECT * FROM Tehtava WHERE kayttaja = :kayttaja');
 
