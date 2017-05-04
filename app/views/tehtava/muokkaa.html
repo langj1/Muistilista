@@ -1,6 +1,6 @@
 {% extends "base.html" %}
   {% block content %}
-  {% tehtava %}
+    {% for tehtava in tehtava %}
     <h1>Muokkaa {{tehtava.nimi}}</h1>
 
     <form method ="post" action="{{base_path}}/muistilista/{{tehtava.id}}/muokkaa">
@@ -39,5 +39,5 @@
         <button type="submit" class="btn btn-success">Muokkaa</button>
       </div>
     </form>
-    {% end %}
+    {% endfor %}
   {% endblock %}
