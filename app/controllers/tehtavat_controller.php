@@ -28,8 +28,11 @@ class TehtavaController extends BaseController{
 
 		$tehtava->save();
 
-		
-		$haku = Luokka::etsi($params['luokka']);
+		$l = new Luokka(array(
+			'nimi' => 'qehwudasgd',
+			'kayttaja' => 'cnyakuef'));
+
+		$haku = $l::etsi($params['luokka']);
 
 		if(empty($haku)){
 
