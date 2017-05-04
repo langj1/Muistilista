@@ -23,7 +23,7 @@ class TehtavaController extends BaseController{
 			'nimi' => $params['nimi'],
 			'tarkeys' => $tarkeys,
 			'lisatieto' => $params['lisatieto'],
-			'kayttaja' => $kayttaja;
+			'kayttaja' => $kayttaja
 			));
 
 		$tehtava->save();
