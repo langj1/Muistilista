@@ -64,7 +64,7 @@ class TehtavaController extends BaseController{
 		$errors = $tehtava->errors();
 
 		if(count($errors) > 0){
-			View::make('tehtava/muokka.html', array('errors' => $errors, 'attributes' => $attributes));
+			View::make('tehtava/muokkaa.html', array('errors' => $errors, 'attributes' => $attributes));
 		}else{
 			$tehtava->update();
 
