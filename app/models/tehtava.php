@@ -16,7 +16,7 @@
 
    		$query = DB::connection()->prepare('SELECT * FROM Tehtava WHERE kayttaja = :kayttaja');
 
-   		$query->execute(array('kayttaja' => $tunnus->tunnus));
+   		$query->execute(array('kayttaja' => $tunnus->tu));
 
    		$rows = $query -> fetchAll();
 
@@ -41,8 +41,10 @@
    		$query -> execute(array('id' => $id));
    		$row = $query -> fetch();
 
+      $tehtava = array();
+
    		if($row){
-   			$tehtava = new Tehtava(array(
+   			$tehtava[] = new Tehtava(array(
    				'id' => $row['id'],
    				'kayttaja' => $row['kayttaja'],
    				'nimi' => $row['nimi'],
