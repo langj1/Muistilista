@@ -11,4 +11,13 @@ class LuokkaController extends BaseController{
 		View::make('luokka/luokat.html', array('luokat' => $luokat));
 	}
 
+	public static function luokka($nimi){
+
+		self::check_logged_in();
+
+		$tehtavat = Tehtava::etsiTehtavat($nimi);
+
+		View::make('luokka/luokka.html', array('tehtavat' => $tehtavat));
+	}
+
 }

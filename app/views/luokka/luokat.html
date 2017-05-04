@@ -13,7 +13,7 @@
     <tbody>
     {% for luokka in luokat %}
       <tr>
-        <td>{{luokka.nimi}}</td>
+        <td><a href="{{base_path}}/luokat/{{luokka.nimi}}">{{luokka.nimi}}</a></td>
         <td>{{luokka.maara}}</td>
       </tr>
     {% endfor %}
