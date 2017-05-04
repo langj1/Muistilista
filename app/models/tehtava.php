@@ -93,17 +93,9 @@
     public static function etsiLuokat($id){
       $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava');
       $query -> execute(array('tehtava' => $id));
-      $rows = $query -> fetch();
+      $row = $query -> fetch();
 
-      $luokat = "";
-
-      foreach($rows as $row){
-
-        $luokat .= $row['luokka'];
-        $luokat .= " ";
-      }
-
-      return $luokat;
+      return $row['luokka'];
     }
 
     public static function etsiTehtavat($nimi){

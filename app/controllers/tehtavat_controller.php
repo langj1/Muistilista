@@ -28,10 +28,7 @@ class TehtavaController extends BaseController{
 
 		$tehtava->save();
 
-		$luokat = explode(" ", $params['luokka']);
-
-
-		foreach($luokat as $luokanNimi){
+			$luokanNimi = $params['luokka'];
 
 			$haku = Luokka::find($luokanNimi);
 
@@ -53,10 +50,7 @@ class TehtavaController extends BaseController{
 			
 			$luokitus->save();
 
-		}
-
 		
-
 		Redirect::to('/muistilista');
 		
 	}
