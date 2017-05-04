@@ -6,9 +6,9 @@ salasana varchar(50) NOT NULL
 CREATE TABLE Tehtava(
 id SERIAL PRIMARY KEY,
 kayttaja varchar(50) REFERENCES Kayttaja(tunnus),
-nimi varchar(50) NOT NULL UNIQUE,
+nimi varchar(50) NOT NULL,
 tarkeys INTEGER NOT NULL,
-lisatieto varchar(500)
+lisatieto varchar(500),
 );
 
 CREATE TABLE Luokka(
@@ -22,5 +22,5 @@ tehtava varchar(50) REFERENCES Tehtava(nimi)
 );
 
 CREATE TABLE Ylaluokka(
-luokka INTEGER REFERENCES Luokka(nimi)
+luokka varchar(50) REFERENCES Luokka(nimi)
 );
