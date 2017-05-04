@@ -135,8 +135,8 @@
     }
 
       public static function luokka($id){
-        $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE id = :id LIMIT 1');
-        $query -> execute(array('id' => $id));
+        $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava LIMIT 1');
+        $query -> execute(array('tehtava' => $id));
         $row = $query -> fetch();
 
        
