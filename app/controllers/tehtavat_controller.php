@@ -51,7 +51,7 @@ class TehtavaController extends BaseController{
 			$luokitus->save();
 
 		
-		Redirect::to('/muistilista');
+		Redirect::to('/muistilista', array('message' => 'Tehtävän lisäys onnistunut!'));
 		
 	}
 
