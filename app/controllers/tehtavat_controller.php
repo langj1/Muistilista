@@ -92,10 +92,11 @@ class TehtavaController extends BaseController{
 			'lisatieto' => $params['lisatieto'],
 			'kayttaja' => self::get_user_logged_in()->tunnus
 		);
-
+		Kint::dump($params);
 		$tehtava = new Tehtava($attributes);
 		$errors = $tehtava->errors();
 
+/*
 		if(count($errors) > 0){
 			View::make('tehtava/muokkaa.html', array('errors' => $errors, 'attributes' => $attributes));
 		}else{
@@ -103,6 +104,7 @@ class TehtavaController extends BaseController{
 
 			Redirect::to('/muistilista', array('message' => 'Muokkaus onnistunut!'));
 		}
+		*/
 	}
 
 	public static function poista($id){
