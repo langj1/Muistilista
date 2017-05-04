@@ -31,7 +31,7 @@ class TehtavaController extends BaseController{
 		$luokat = explode(" ", $params['luokka']);
 
 
-		foreach($luokat as $luokanNimi){}
+		foreach($luokat as $luokanNimi){
 
 			$haku = Luokka::find($luokanNimi);
 
