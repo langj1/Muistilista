@@ -16,7 +16,7 @@
 
    		$query = DB::connection()->prepare('SELECT * FROM Tehtava WHERE kayttaja = :kayttaja');
 
-   		$query->execute(array('id' => $tunnus));
+   		$query->execute(array('kayttaja' => $tunnus));
 
    		$rows = $query -> fetchAll();
 
