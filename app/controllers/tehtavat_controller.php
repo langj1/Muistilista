@@ -89,6 +89,21 @@ class TehtavaController extends BaseController{
 		
 		$tehtava = new Tehtava($attributes);
 
+			$luokanNimi = $params['luokka'];
+
+			$haku = Luokka::find($luokanNimi);
+
+			if(empty($haku)){
+
+				$luokka = new Luokka(array(
+				'kayttaja' => $kayttaja,
+				'nimi' => $luokanNimi
+				));
+
+				$luokka->save();
+
+			}
+
 		$tehtava->update();
 
 		$attribuutit = array(
