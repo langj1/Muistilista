@@ -97,11 +97,11 @@
 
 
 
-      $luokat = array();
+      $luokat = '';
 
       foreach($rows as $row){
 
-        $luokat[] = $row['luokka'];
+        $luokat = $luokat . $row['luokka'] . ' ';
       }
 
       return $luokat;
