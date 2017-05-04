@@ -1,16 +1,8 @@
 <?php
 
-  $routes->get('/hiekkalaatikko', function() {
-    HelloWorldController::sandbox();
-  });
-
-  $routes->get('/login', function() {
-    HelloWorldController::login();
-  });
-
-  $routes->get('/lisaa', function() {
-    HelloWorldController::lisaa();
-  });
+  function check_logged_in(){
+    BaseController::check_logged_in();
+  }
   
   $routes->get('/', function() {
     UserController::login();
@@ -20,27 +12,27 @@
     UserController::handle_login();
   });
 
-  $routes->get('/muistilista', function() {
+  $routes->get('/muistilista', 'check_logged_in', function() {
     TehtavaController::muistilista();
   });
 
-  $routes->post('/muistilista', function() {
+  $routes->post('/muistilista', 'check_logged_in', function() {
     TehtavaController::store();
   });
 
-  $routes->get('/muistilista/uusi', function() {
+  $routes->get('/muistilista/uusi', 'check_logged_in', function() {
     TehtavaController::uusi();
   });
 
-  $routes->get('/muistilista/:id/muokkaa', function($id) {
+  $routes->get('/muistilista/:id/muokkaa', 'check_logged_in', function($id) {
     TehtavaController::muokkaa($id);
   });
 
-  $routes->post('/muistilista/:id/muokkaa', function($id) {
+  $routes->post('/muistilista/:id/muokkaa', 'check_logged_in', function($id) {
     TehtavaController::update($id);
   });
 
-  $routes->post('/muistilista/:id/poista', function($id) {
+  $routes->post('/muistilista/:id/poista', 'check_logged_in', function($id) {
     TehtavaController::poista($id);
   });
 
@@ -48,11 +40,11 @@
     UserController::logout();
   });
 
-  $routes->get('/luokat', function(){
+  $routes->get('/luokat', 'check_logged_in', function(){
     LuokkaController::luokat();
   });
 
-  $routes->get('/luokat/:nimi', function($nimi){
+  $routes->get('/luokat/:nimi', 'check_logged_in', function($nimi){
     LuokkaController::luokka($nimi);
   });
 
