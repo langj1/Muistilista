@@ -95,13 +95,12 @@
       $query -> execute(array('tehtava' => $id));
       $rows = $query -> fetch();
 
-
-
-      $luokat = '';
+      $luokat = "";
 
       foreach($rows as $row){
 
-        $luokat = $luokat . $row['luokka'] . ' ';
+        $luokat .= $row['luokka'];
+        $luokat .= " ";
       }
 
       return $luokat;

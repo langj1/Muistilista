@@ -65,7 +65,7 @@
 
             $row = $query -> fetch();
 
-            return $row;
+            return $row['tehtavat'];
 
          }
 	}
