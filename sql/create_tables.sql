@@ -8,7 +8,7 @@ id SERIAL PRIMARY KEY,
 kayttaja varchar(50) REFERENCES Kayttaja(tunnus),
 nimi varchar(50) NOT NULL,
 tarkeys INTEGER NOT NULL,
-lisatieto varchar(500),
+lisatieto varchar(500)
 );
 
 CREATE TABLE Luokka(
