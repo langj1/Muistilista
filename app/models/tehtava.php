@@ -15,7 +15,7 @@
       $tunnus = $t->get_user_logged_in();
       $t->check_logged_in();
 
-   		$query = DB::connection()->prepare('SELECT * FROM Tehtava WHERE kayttaja = :kayttaja');
+   		$query = DB::connection()->prepare('SELECT * FROM Tehtava WHERE kayttaja = :kayttaja ORDER BY tarkeys DESC');
 
    		$query->execute(array('kayttaja' => $tunnus->tunnus));
 

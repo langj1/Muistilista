@@ -50,10 +50,12 @@ class TehtavaController extends BaseController{
 				'luokka' => $luokanNimi,
 				'tehtava' => $tehtava->id
 				));
+			
+			$luokitus->save();
 
 		}
 
-		$luokitus->save();
+		
 
 		Redirect::to('/muistilista');
 		

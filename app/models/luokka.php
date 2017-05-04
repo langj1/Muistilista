@@ -2,7 +2,7 @@
 
 	class Luokka extends BaseModel{
 
-		public $kayttaja, $nimi;
+		public $kayttaja, $nimi, $maara;
 
 		public function __construct($attributes){
    			parent::__construct($attributes);
@@ -13,7 +13,7 @@
       		$t = new TehtavaController();
       		$tunnus = $t->get_user_logged_in();
 
-   			$query = DB::connection()->prepare('SELECT * FROM Luokka WHERE kayttaja = :kayttaja');
+   			$query = DB::connection()->prepare('SELECT * FROM Luokka WHERE kayttaja = :kayttaja ORDER BY nimi ASC');
 
    			$query->execute(array('kayttaja' => $tunnus->tunnus));
 
@@ -25,7 +25,8 @@
 
    			$luokat[] = new Luokka(array(
    				'kayttaja' => $row['kayttaja'],
-   				'nimi' => $row['nimi']
+   				'nimi' => $row['nimi'],
+               'maara' => self::montaTehtavaa($row['nimi'])
    			));
    			}
 
@@ -56,4 +57,15 @@
 
       		$query->execute(array('kayttaja' => $this->kayttaja, 'nimi' => $this->nimi));
     	   }
+
+         public function montaTehtavaa($nimi){
+            $query = DB::connection()->prepare('SELECT COUNT(*) AS tehtavat FROM Tehtava, Luokka, Luokitus WHERE luokka = Luokka.nimi AND id = tehtava AND Luokka.nimi = :nimi');
+
+            $query->execute(array( 'nimi' => $this->nimi));
+
+            $row = $query -> fetch();
+
+            return $row;
+
+         }
 	}
