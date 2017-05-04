@@ -94,16 +94,11 @@ class TehtavaController extends BaseController{
 		);
 		
 		$tehtava = new Tehtava($attributes);
-		$errors = 0;//$tehtava->errors();
 
-
-		if(count($errors) > 0){
-			View::make('tehtava/muokkaa.html', array('errors' => $errors, 'attributes' => $attributes));
-		}else{
 			$tehtava->update();
 
 			Redirect::to('/muistilista', array('message' => 'Muokkaus onnistunut!'));
-		}
+		
 		
 	}
 
