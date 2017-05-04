@@ -36,7 +36,7 @@
     	}
 
       public function update(){
-        $query = DB::connection()->prepare('UPDATE Luokitus SET (luokka) = (:luokka) WHERE id = :id');
+        $query = DB::connection()->prepare('UPDATE Luokitus SET (luokka) = (:luokka) WHERE tehtava = :id');
 
         $query->execute(array('luokka' => $this->luokka, 'id' => $this->tehtava));
     }
