@@ -52,7 +52,7 @@
    			return null;
    		}
 
-         public static function find($nimi){
+         public static function etsi($nimi){
             $query = DB::connection()->prepare('SELECT * FROM Luokka WHERE nimi = :nimi LIMIT 1');
             $query -> execute(array('nimi' => $nimi));
             $row = $query -> fetch();

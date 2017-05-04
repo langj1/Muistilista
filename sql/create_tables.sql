@@ -12,14 +12,13 @@ lisatieto varchar(500)
 );
 
 CREATE TABLE Luokka(
-id SERIAL PRIMARY KEY,
 kayttaja varchar(50) REFERENCES Kayttaja(tunnus),
-nimi varchar(50) NOT NULL
+nimi varchar(50) PRIMARY KEY
 );
 
 CREATE TABLE Luokitus(
-luokka INTEGER REFERENCES Luokka(id),
-tehtava INTEGER REFERENCES Tehtava(id)
+luokka INTEGER REFERENCES Luokka(nimi),
+tehtava INTEGER REFERENCES Tehtava(nimi)
 );
 
 CREATE TABLE Ylaluokka(
