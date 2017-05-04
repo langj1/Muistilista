@@ -28,23 +28,30 @@ class TehtavaController extends BaseController{
 
 		$tehtava->save();
 
-		$haku = Luokka::find($params['luokka']);
+		$luokat = explode(" ", $params['luokka']);
 
-		if(empty($haku)){
 
-			$luokka = new Luokka(array(
-			'kayttaja' => $kayttaja,
-			'nimi' => $params['luokka']
-			));
+		foreach($luokat as $luokanNimi){}
 
-			$luokka->save();
+			$haku = Luokka::find($luokanNimi);
+
+			if(empty($haku)){
+
+				$luokka = new Luokka(array(
+				'kayttaja' => $kayttaja,
+				'nimi' => $luokanNimi
+				));
+
+				$luokka->save();
+
+			}
+
+			$luokitus = new Luokitus(array(
+				'luokka' => $luokanNimi,
+				'tehtava' => $tehtava->id
+				));
 
 		}
-
-		$luokitus = new Luokitus(array(
-			'luokka' => $params['luokka'],
-			'tehtava' => $tehtava->id
-			));
 
 		$luokitus->save();
 
