@@ -25,7 +25,7 @@
 
    		foreach($rows as $row){
 
-      $luokka = self::etsiLuokat($row['nimi']);
+      $luokka = self::etsiLuokat($row['id']);
 
    			$tehtavat[] = new Tehtava(array(
    				'id' => $row['id'],
@@ -90,9 +90,9 @@
       $query->execute(array('id' => $this->id));
     }
     
-    public static function etsiLuokat($nimi){
-      $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava LIMIT 1');
-      $query -> execute(array('tehtava' => $nimi));
+    public static function etsiLuokat($id){
+      $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava');
+      $query -> execute(array('tehtava' => $id));
       $row = $query -> fetch();
 
       $tehtava = array();
