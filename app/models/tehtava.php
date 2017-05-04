@@ -24,13 +24,15 @@
 
    		foreach($rows as $row){
 
+      $luokka = self::etsiLuokat($row['nimi']);
+
    			$tehtavat[] = new Tehtava(array(
    				'id' => $row['id'],
    				'kayttaja' => $row['kayttaja'],
    				'nimi' => $row['nimi'],
    				'tarkeys' => $row['tarkeys'],
    				'lisatieto' => $row['lisatieto']
-          'luokka' => self::etsiLuokat($row['nimi'])
+          'luokka' => $luokka
    			));
    		}
 
