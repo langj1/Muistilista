@@ -118,7 +118,7 @@
         $tehtavat[] = new Tehtava(array(
           'id' => $row['id'],
           'kayttaja' => $row['kayttaja'],
-          'nimi' => $row['nimi'],
+          'nimi' => $row['tehtava.nimi'],
           'tarkeys' => $row['tarkeys'],
           'lisatieto' => $row['lisatieto']
         ));

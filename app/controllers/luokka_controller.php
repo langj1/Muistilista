@@ -17,7 +17,7 @@ class LuokkaController extends BaseController{
 
 		$tehtavat = Tehtava::etsiTehtavat($nimi);
 
-		View::make('luokka/luokka.html', array('tehtavat' => $tehtavat));
+		View::make('luokka/luokka.html', array('tehtava' => $tehtavat));
 	}
 
 }
