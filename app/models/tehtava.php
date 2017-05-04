@@ -93,7 +93,7 @@
     public static function etsiLuokat($id){
       $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava');
       $query -> execute(array('tehtava' => $id));
-      $row = $query -> fetch();
+      $rows = $query -> fetch();
 
 
 
