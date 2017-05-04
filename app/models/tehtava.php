@@ -95,14 +95,16 @@
       $query -> execute(array('tehtava' => $id));
       $row = $query -> fetch();
 
-      $tehtava = array();
 
-      if($row){
 
-        return $row['luokka'];
+      $luokat = array();
+
+      foreach($rows as $row){
+
+        $luokat[] = $row['luokka'];
       }
 
-      return null;
+      return $luokat;
     }
 
   }
