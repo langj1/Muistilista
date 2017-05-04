@@ -31,7 +31,7 @@
    				'kayttaja' => $row['kayttaja'],
    				'nimi' => $row['nimi'],
    				'tarkeys' => $row['tarkeys'],
-   				'lisatieto' => $row['lisatieto']
+   				'lisatieto' => $row['lisatieto'],
           'luokka' => $luokka
    			));
    		}
