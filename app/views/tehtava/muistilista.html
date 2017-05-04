@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Oma Muistilista</h1>
+{% if user_logged_in %}
+  <h1>Käyttäjän {{user_logged_in.name}} muistilista</h1>
   <p>
   <a href="/tsoha/muistilista/uusi" class="btn btn-success">Lisää tehtävä</a>
   </p>
@@ -28,4 +29,5 @@
     {% endfor %}
     </tbody>
   </table>
+  {% endif %}
 {% endblock %}

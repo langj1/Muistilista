@@ -1,6 +1,7 @@
 {% extends "base.html" %}
   {% block content %}
-    <h1>Muokkaa tehtava.nimi</h1>
+  {% if tehtava %}
+    <h1>Muokkaa {{tehtava.nimi}}</h1>
 
     <form method ="post" action="{{base_path}}/muistilista/{{tehtava.id}}/muokkaa">
       <div class="form-group">
@@ -38,4 +39,5 @@
         <button type="submit" class="btn btn-success">Muokkaa</button>
       </div>
     </form>
+    {% endif %}
   {% endblock %}
