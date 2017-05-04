@@ -61,7 +61,7 @@
          public function montaTehtavaa($nimi){
             $query = DB::connection()->prepare('SELECT COUNT(*) AS tehtavat FROM Tehtava, Luokka, Luokitus WHERE luokka = Luokka.nimi AND id = tehtava AND Luokka.nimi = :nimi');
 
-            $query->execute(array( 'nimi' => $this->nimi));
+            $query->execute(array( 'nimi' => $nimi));
 
             $row = $query -> fetch();
 
