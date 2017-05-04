@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user_logged_in %}
+  <h1>Käyttäjän {{user_logged_in.tunnus}} luokat</h1>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Luokka</th>
+        <th>Tehtävien määrä</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for luokka in luokat %}
+      <tr>
+        <td>{{luokka.nimi}}</td>
+        <td>{{luokka.maara}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+{% endblock %}
