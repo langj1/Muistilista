@@ -20,7 +20,9 @@
     {% for tehtava in tehtavat %}
       <tr>
         <td>{{tehtava.nimi}}</td>
-        <td>{{tehtava.luokka}}</td>
+        <td>{% for luokka in {{tehtava.luokka}} %}
+        {{luokka}}
+        {% endfor %}</td>
         <td>{{tehtava.tarkeys}}</td>
         <td>{{tehtava.lisatieto}}</td>
         <td><form method="post" action="{{base_path}}/muistilista/{{tehtava.id}}/poista" style="display: inline-block;"><button type="submit" class="btn btn-danger">Poista</button></form></td>
