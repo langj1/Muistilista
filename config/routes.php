@@ -48,7 +48,7 @@
     UserController::logout();
   });
 
-  $routes->post('/luokat', function(){
+  $routes->get('/luokat', function(){
     LuokkaController::luokat();
   });
 
