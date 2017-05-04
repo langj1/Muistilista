@@ -70,7 +70,7 @@
     }
 
     public function update(){
-      $query = DB::connection()->prepare('UPDATE Tehtava SET (nimi, tarkeys, lisatieto) = ( :nimi, :tarkeys, :lisatieto)');
+      $query = DB::connection()->prepare('UPDATE Tehtava SET (nimi, tarkeys, lisatieto) = (:nimi, :tarkeys, :lisatieto)');
 
       $query->execute(array('nimi' => $this->nimi, 'tarkeys' => $this->tarkeys, 'lisatieto' => $this->lisatieto));
     }
@@ -86,5 +86,19 @@
       $query->execute(array('id' => $this->id));
     }
     
-   
+    public static function find($nimi){
+      $query = DB::connection()->prepare('SELECT * FROM Luokitus WHERE tehtava = :tehtava LIMIT 1');
+      $query -> execute(array('tehtava' => $nimi));
+      $row = $query -> fetch();
+
+      $tehtava = array();
+
+      if($row){
+
+        return $row['luokka'];
+      }
+
+      return null;
+    }
+
   }

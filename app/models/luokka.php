@@ -27,7 +27,7 @@
    			$luokat[] = new Luokka(array(
    				'id' => $row['id'],
    				'kayttaja' => $row['kayttaja'],
-   				'nimi' => $row['nimi'],
+   				'nimi' => $row['nimi']
    			));
    			}
 
@@ -43,7 +43,7 @@
    				$luokka = new Luokka(array(
    					'id' => $row['id'],
    					'kayttaja' => $row['kayttaja'],
-   					'nimi' => $row['nimi'],
+   					'nimi' => $row['nimi']
    				));
 
    				return $luokka;
@@ -51,6 +51,24 @@
 
    			return null;
    		}
+
+         public static function find($nimi){
+            $query = DB::connection()->prepare('SELECT * FROM Luokka WHERE nimi = :nimi LIMIT 1');
+            $query -> execute(array('nimi' => $nimi));
+            $row = $query -> fetch();
+
+            if($row){
+               $luokka = new Luokka(array(
+                  'id' => $row['id'],
+                  'kayttaja' => $row['kayttaja'],
+                  'nimi' => $row['nimi']
+               ));
+
+               return $luokka;
+            }
+
+            return null;
+         }
 
    		public function save(){
 
@@ -61,5 +79,5 @@
       		$row = $query->fetch();
 
       		$this->id = $row['id'];
-    	}
+    	   }
 	}

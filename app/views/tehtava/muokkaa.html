@@ -1,12 +1,12 @@
 {% extends "base.html" %}
   {% block content %}
     {% for tehtava in tehtava %}
-    <h1>Muokkaa {{tehtava.nimi}}</h1>
+    <h1>Muokkaa tehtävää {{tehtava.nimi}}</h1>
 
     <form method ="post" action="{{base_path}}/muistilista/{{tehtava.id}}/muokkaa">
       <div class="form-group">
         <label>Tehtävä</label>
-        <input name="nimi" class="form-control" type="text" value={{tehtava.nimi}}>
+        <input name="nimi" class="form-control" type="text">
       </div>
       <div class="form-group">
         <label>Luokka</label>

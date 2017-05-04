@@ -17,14 +17,36 @@ class TehtavaController extends BaseController{
 
 		$tarkeys = $params['tarkeys'];
 
+		$kayttaja = self::get_user_logged_in()->tunnus;
+
 		$tehtava = new Tehtava(array(
 			'nimi' => $params['nimi'],
 			'tarkeys' => $tarkeys,
 			'lisatieto' => $params['lisatieto'],
-			'kayttaja' => self::get_user_logged_in()->tunnus
+			'kayttaja' => $kayttaja;
 			));
 
 		$tehtava->save();
+
+		$haku = new luokka()->etsi($params['luokka']);
+
+		if(empty($haku)){
+
+			$luokka = new Luokka(array(
+			'kayttaja' => $kayttaja,
+			'nimi' => $params['luokka']
+			));
+
+			$luokka->save();
+
+		}
+
+		$luokitus = new Luokitus(array(
+			'luokka' => $params['luokka'],
+			'tehtava' => $params['nimi']
+			));
+
+		$luokitus->save();
 
 		Redirect::to('/muistilista');
 		
@@ -58,7 +80,7 @@ class TehtavaController extends BaseController{
 			'nimi' => $params['nimi'],
 			'tarkeys' => $tarkeys,
 			'lisatieto' => $params['lisatieto'],
-			'kayttaja' => 'Jonne'
+			'kayttaja' => self::get_user_logged_in()->tunnus
 		);
 
 		$tehtava = new Tehtava($attributes);
